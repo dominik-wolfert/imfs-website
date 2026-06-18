@@ -1,0 +1,125 @@
+---
+interface PricingItem {
+  label: string;
+  price: string;
+}
+
+interface Service {
+  eyebrow: string;
+  name: string;
+  description: string;
+  features: string[];
+  priceLabel: string;
+  price?: string;
+  pricing?: PricingItem[];
+}
+
+const services: Service[] = [
+  {
+    eyebrow: 'Einstieg',
+    name: 'Raum-Impuls',
+    description: 'Der Einstieg für mehr Klarheit und Energie in Ihrem Raum.',
+    features: [
+      'Online oder vor Ort',
+      'Analyse eines Raumes oder Ortes',
+      'Erste Feng-Shui-Analyse',
+      'Konkrete Empfehlungen',
+    ],
+    priceLabel: 'Investition',
+    price: 'ab 255 €',
+  },
+  {
+    eyebrow: 'Ganzheitlich',
+    name: 'Raum- & Ortsbalance',
+    description: 'Die umfassende Analyse für Wohn- und Arbeitsräume.',
+    features: [
+      'Feng-Shui-Analyse',
+      'Energetische Raumklärung',
+      'Ortsklärung',
+      'Optimierung des Energieflusses',
+      'Schriftliche Zusammenfassung',
+    ],
+    priceLabel: 'Preise',
+    pricing: [
+      { label: 'Wohnung bis 100 m²', price: '444 €' },
+      { label: 'Business / Praxis / Büro', price: '555 €' },
+      { label: 'Einfamilienhaus', price: '999 €' },
+      { label: 'Grundstücke', price: 'auf Anfrage' },
+    ],
+  },
+  {
+    eyebrow: 'Begleitung',
+    name: 'Begleitung Raum & Leben',
+    description: 'Aus Erkenntnis wird Veränderung. Persönliche Begleitung über mehrere Monate.',
+    features: [
+      'Persönliche Begleitung',
+      'Regelmäßige Impulse',
+      'Unterstützung bei Veränderungen',
+      'Raum für Fragen',
+      'Begleitung über mehrere Monate',
+    ],
+    priceLabel: 'Investition',
+    price: 'ab 222 € / Monat',
+  },
+];
+---
+
+<section id="leistungen" class="py-24 bg-im-creme">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="mb-16">
+      <span class="section-label">Leistungen</span>
+      <span class="accent-line"></span>
+      <h2
+        class="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-im-text leading-tight max-w-lg"
+      >
+        Was ich für<br />Sie tun kann.
+      </h2>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        services.map(service => (
+          <div class="bg-white border-t-2 border-im-taupe p-8 flex flex-col">
+            <span class="section-label mb-4">{service.eyebrow}</span>
+            <h3 class="font-serif text-2xl font-medium text-im-text mb-3">{service.name}</h3>
+            <p class="font-sans text-im-dark leading-relaxed mb-6 flex-1">{service.description}</p>
+
+            <ul class="space-y-2 mb-8">
+              {service.features.map(feature => (
+                <li class="flex items-start gap-3 font-sans text-sm text-im-dark">
+                  <span class="text-im-taupe mt-0.5 shrink-0">—</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="border-t border-im-beige pt-6 mt-auto">
+              <span class="section-label mb-2">{service.priceLabel}</span>
+              {service.price && (
+                <p class="font-serif text-2xl text-im-text mt-2">{service.price}</p>
+              )}
+              {service.pricing && (
+                <div class="space-y-1 mt-2">
+                  {service.pricing.map(item => (
+                    <p class="font-sans text-sm text-im-dark">
+                      {item.label}
+                      <span class="text-im-text font-medium ml-1">{item.price}</span>
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 text-center">
+      <a href="#kontakt" class="btn-primary">Angebot anfragen</a>
+    </div>
+
+  </div>
+</section>

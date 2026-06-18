@@ -1,0 +1,74 @@
+---
+const targetGroups = [
+  'Praxen & Gesundheitsberufe',
+  'Kanzleien & Beratungsbüros',
+  'Selbständige & Coaches',
+  'Kleine Unternehmen',
+];
+---
+
+<section id="business" class="py-24 bg-im-beige">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+
+      <!-- Text -->
+      <div>
+        <span class="section-label">Für Unternehmen</span>
+        <span class="accent-line"></span>
+        <h2
+          class="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-im-text leading-tight mb-8"
+        >
+          Räume, die<br />Erfolg unterstützen.
+        </h2>
+        <div class="space-y-5 font-sans text-im-dark leading-relaxed">
+          <p>
+            Arbeitsräume sollen nicht nur funktional sein. Sie sollen Menschen
+            unterstützen, Klarheit schaffen und gute Energie tragen.
+          </p>
+          <p>
+            Mit meiner Arbeit unterstütze ich Unternehmen, Praxen, Kanzleien
+            und Selbständige dabei, die Energie in ihren Arbeitsräumen gezielt
+            zu optimieren.
+          </p>
+          <p class="font-serif text-xl text-im-text italic leading-relaxed">
+            Erfolg beginnt nicht bei den Zahlen.<br />
+            Erfolg beginnt in den Räumen, in denen Menschen arbeiten.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-6">
+
+        <!-- Zielgruppen -->
+        <div class="bg-white border-t-2 border-im-taupe p-8">
+          <h3 class="font-serif text-xl text-im-text mb-5">Für wen?</h3>
+          <ul class="space-y-3">
+            {
+              targetGroups.map(item => (
+                <li class="flex items-center gap-4 font-sans text-sm text-im-dark">
+                  <span class="w-5 h-px bg-im-taupe shrink-0"></span>
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <!-- Zahlenmensch-Quote -->
+        <div class="bg-im-dark p-8">
+          <span class="section-label mb-4" style="color: #B7A08A;">Besonderheit</span>
+          <blockquote class="font-serif text-xl text-im-creme leading-relaxed mt-3">
+            „Meine zweite Leidenschaft sind Zahlen."
+          </blockquote>
+          <p class="mt-4 font-sans text-sm text-im-beige leading-relaxed">
+            Als Unternehmerin mit über 20 Jahren Erfahrung im Bereich Datenservice
+            verbinde ich strukturiertes Denken mit tiefer Raumkenntnis –
+            eine Kombination, die Vertrauen schafft.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

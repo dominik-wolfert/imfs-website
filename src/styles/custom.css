@@ -1,0 +1,147 @@
+/* === Base === */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Section label — kleine Kapitälchen-Zeile === */
+
+.section-label {
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #B7A08A;
+}
+
+/* === Dekorative Linie unter section-label === */
+
+.accent-line {
+  display: block;
+  width: 2.5rem;
+  height: 1px;
+  background-color: #B7A08A;
+  margin: 1.25rem 0;
+}
+
+/* === Navigation === */
+
+.nav-link {
+  position: relative;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6A5D52;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #B7A08A;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #4A423B;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* === Buttons === */
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 1px;
+  min-height: 3rem;
+  padding: 0.75rem 2rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #B7A08A;
+  border-color: #B7A08A;
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: #6A5D52;
+  border-color: #6A5D52;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: #B7A08A;
+  color: #4A423B;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: #EFE8E1;
+}
+
+/* === Formular-Inputs === */
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #D9D0C8;
+  border-radius: 1px;
+  color: #4A423B;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #B7A08A;
+}
+
+.form-input::placeholder {
+  color: #C8BDB5;
+}
+
+/* === Accessibility === */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #B7A08A;
+  outline-offset: 3px;
+}
+
+/* === CSS-Platzhalter für Bilder === */
+
+.placeholder-hero-bg {
+  background: linear-gradient(160deg, #F7F4F0 0%, #EFE8E1 55%, #E4DAD4 100%);
+}
+
+.placeholder-portrait-bg {
+  background: linear-gradient(145deg, #EFE8E1 0%, #D9D0C8 100%);
+}

@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Datenschutz – Iris Musshoff"
+  description="Datenschutzerklärung der Website iris-musshoff.de"
+>
+  <section class="py-24 bg-im-creme min-h-screen">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <span class="section-label">Rechtliches</span>
+      <span class="accent-line"></span>
+      <h1 class="font-serif text-4xl md:text-5xl font-light text-im-text mb-16">
+        Datenschutzerklärung
+      </h1>
+
+      <div class="space-y-10 font-sans text-im-dark leading-relaxed">
+
+        <div>
+          <h2 class="font-sans text-xs tracking-widest uppercase text-im-text mb-3">
+            1. Datenschutz auf einen Blick
+          </h2>
+          <p>
+            Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren
+            personenbezogenen Daten passiert, wenn Sie diese Website besuchen.
+            Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert
+            werden können.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-sans text-xs tracking-widest uppercase text-im-text mb-3">
+            2. Verantwortliche Stelle
+          </h2>
+          <p>
+            Iris Musshoff<br />
+            [Adresse wird ergänzt]<br />
+            E-Mail: kontakt@iris-musshoff.de
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-sans text-xs tracking-widest uppercase text-im-text mb-3">
+            3. Kontaktformular
+          </h2>
+          <p>
+            Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben
+            aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten
+            zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen gespeichert.
+            Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+          </p>
+          <p class="mt-3">
+            Die Übermittlung der Formulardaten erfolgt über Formspree (formspree.io).
+            Informationen zum Datenschutz:
+            <a
+              href="https://formspree.io/legal/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline decoration-im-taupe hover:text-im-text transition-colors"
+            >
+              Formspree Privacy Policy
+            </a>.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-sans text-xs tracking-widest uppercase text-im-text mb-3">
+            4. Hosting
+          </h2>
+          <p>
+            Diese Website wird bei Vercel Inc. gehostet. Vercel verarbeitet Verbindungsdaten
+            technisch für die Auslieferung der Website. Details:
+            <a
+              href="https://vercel.com/legal/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline decoration-im-taupe hover:text-im-text transition-colors"
+            >
+              Vercel Privacy Policy
+            </a>.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-sans text-xs tracking-widest uppercase text-im-text mb-3">
+            5. Schriftarten
+          </h2>
+          <p>
+            Diese Website verwendet selbst gehostete Schriftarten (Cormorant Garamond, Inter).
+            Es werden keine externen Schriftartendienste wie Google Fonts eingebunden.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-sans text-xs tracking-widest uppercase text-im-text mb-3">
+            6. Ihre Rechte
+          </h2>
+          <p>
+            Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten
+            personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der
+            Datenverarbeitung sowie ein Recht auf Berichtigung oder Löschung dieser Daten.
+            Hierzu sowie zu weiteren Fragen können Sie sich jederzeit an uns wenden.
+          </p>
+        </div>
+
+        <div class="bg-im-beige border-t-2 border-im-taupe p-6">
+          <p class="font-sans text-sm text-im-dark">
+            <strong class="font-medium">Hinweis:</strong> Diese Datenschutzerklärung ist ein
+            Entwurf und sollte vor Veröffentlichung von einem Rechtsanwalt oder
+            Datenschutzbeauftragten geprüft und ergänzt werden.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-16">
+        <a href="/" class="btn-secondary">← Zurück zur Startseite</a>
+      </div>
+
+    </div>
+  </section>
+  <Footer />
+</BaseLayout>

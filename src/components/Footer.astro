@@ -1,0 +1,57 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-im-text py-12">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+
+      <!-- Brand -->
+      <div>
+        <p class="font-serif text-xl text-im-creme tracking-wide">Iris Musshoff</p>
+        <p class="font-sans text-xs text-im-taupe mt-1 tracking-[0.2em] uppercase">
+          Energie für Räume und Orte
+        </p>
+      </div>
+
+      <!-- Links -->
+      <nav aria-label="Footer-Navigation">
+        <ul class="flex flex-wrap gap-6">
+          <li>
+            <a
+              href="/impressum"
+              class="font-sans text-xs text-im-beige tracking-widest uppercase hover:text-im-creme transition-colors"
+            >
+              Impressum
+            </a>
+          </li>
+          <li>
+            <a
+              href="/datenschutz"
+              class="font-sans text-xs text-im-beige tracking-widest uppercase hover:text-im-creme transition-colors"
+            >
+              Datenschutz
+            </a>
+          </li>
+          <li>
+            <a
+              href="#kontakt"
+              class="font-sans text-xs text-im-beige tracking-widest uppercase hover:text-im-creme transition-colors"
+            >
+              Kontakt
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="border-t border-im-dark mt-8 pt-8 text-center">
+      <p class="font-sans text-xs text-im-taupe">
+        © {year} Iris Musshoff · Alle Rechte vorbehalten
+      </p>
+    </div>
+
+  </div>
+</footer>
