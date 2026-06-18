@@ -15,8 +15,8 @@
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource/cormorant-garamond": "^5.0.0",
     "@fontsource/inter": "^5.0.0",
-    "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.0.8",
-    "tailwindcss": "^4.2.2"
+    "@tailwindcss/vite": "4.2.2",
+    "astro": "6.0.8",
+    "tailwindcss": "4.2.2"
   }
 }
