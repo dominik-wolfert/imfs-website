@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import portraitStehend from '../assets/imfs-hero.jpg';
 ---
 
 <section class="placeholder-hero-bg min-h-[85vh] flex items-center">
@@ -7,15 +9,16 @@
 
       <!-- Text -->
       <div>
-        <span class="section-label">Feng Shui · Space Healing · Energiearbeit</span>
+        <span class="section-label">Feng Shui · Energiearbeit · Raumbegleitung</span>
         <span class="accent-line"></span>
         <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-im-text leading-[1.1] tracking-wide">
-          Energie für<br />Räume und<br />Orte
+          Räume, die<br />Menschen<br />tragen.
         </h1>
         <p class="mt-8 font-sans text-lg text-im-dark leading-relaxed max-w-md">
-          Räume und Orte können uns stärken, unterstützen und neue Kraft schenken.
-          Ich begleite Menschen dabei, die Energie in ihren Wohn- und Arbeitsräumen
-          wieder ins Gleichgewicht zu bringen.
+          Unsere Räume erzählen Geschichten. Sie speichern Energie, schenken Kraft
+          oder kosten sie. Ich begleite Sie dabei, die Energie in Ihrem Zuhause
+          oder Arbeitsraum wieder in Einklang zu bringen – mit Klarheit, Sorgfalt
+          und Herzvertrauen.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row gap-4">
           <a href="#kontakt" class="btn-primary">Kontakt aufnehmen</a>
@@ -23,19 +26,16 @@
         </div>
       </div>
 
-      <!-- CSS-Bildplatzhalter -->
+      <!-- Portrait -->
       <div class="hidden md:flex justify-end">
-        <div class="w-72 lg:w-80 aspect-[3/4] placeholder-portrait-bg relative overflow-hidden">
-          <div class="absolute inset-4 border border-im-taupe/30"></div>
-          <div class="absolute bottom-8 left-8 right-8">
-            <div class="h-px bg-im-taupe/40 w-full mb-2"></div>
-            <div class="h-px bg-im-taupe/25 w-2/3"></div>
-          </div>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <span class="font-sans text-xs tracking-[0.3em] uppercase text-im-taupe/60"
-              >Bildplatz</span
-            >
-          </div>
+        <div class="w-72 lg:w-80 aspect-[3/4] relative overflow-hidden">
+          <Image
+            src={portraitStehend}
+            alt="Iris Musshoff"
+            class="w-full h-full object-cover"
+            widths={[400, 640]}
+            sizes="(max-width: 1024px) 288px, 320px"
+          />
         </div>
       </div>
 

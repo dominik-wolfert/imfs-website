@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/imfs-logo.png';
 const year = new Date().getFullYear();
 ---
 
@@ -9,10 +11,13 @@ const year = new Date().getFullYear();
 
       <!-- Brand -->
       <div>
-        <p class="font-serif text-xl text-im-creme tracking-wide">Iris Musshoff</p>
-        <p class="font-sans text-xs text-im-taupe mt-1 tracking-[0.2em] uppercase">
-          Energie für Räume und Orte
-        </p>
+        <Image
+          src={logo}
+          alt="Iris Musshoff"
+          class="h-16 w-auto"
+          widths={[200, 400]}
+          sizes="200px"
+        />
       </div>
 
       <!-- Links -->

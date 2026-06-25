@@ -1,0 +1,51 @@
+---
+// Platzhalter-Testimonials – bitte durch echte Kundenaussagen ersetzen
+const testimonials = [
+  {
+    quote:
+      'Schon kleine Veränderungen haben eine große Wirkung gezeigt. Mein Zuhause fühlt sich seither leichter und klarer an.',
+    name: 'Kundin aus Bielefeld',
+  },
+  {
+    quote:
+      'Iris hat mir geholfen, meinen Arbeitsraum so zu gestalten, dass ich mich wirklich wohlfühle. Die Ruhe und Konzentration sind spürbar.',
+    name: 'Selbständige Beraterin',
+  },
+  {
+    quote:
+      'Ich war skeptisch – aber die Begleitung war so achtsam und professionell, dass ich noch heute von den Veränderungen profitiere.',
+    name: 'Kundin aus Horn-Bad Meinberg',
+  },
+];
+---
+
+<section id="stimmen" class="py-24 bg-im-beige">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="mb-16">
+      <span class="section-label">Stimmen</span>
+      <span class="accent-line"></span>
+      <h2
+        class="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-im-text leading-tight max-w-lg"
+      >
+        Was Klientinnen<br />sagen.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        testimonials.map(t => (
+          <div class="bg-white border-t-2 border-im-taupe p-8 flex flex-col">
+            <blockquote class="font-serif text-lg text-im-text leading-relaxed flex-1">
+              „{t.quote}"
+            </blockquote>
+            <p class="mt-8 font-sans text-xs tracking-widest uppercase text-im-taupe">
+              {t.name}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import '../styles/custom.css';
+import { Image } from 'astro:assets';
+import logo from '../assets/imfs-logo.png';
 
 interface Props {
   title?: string;
@@ -45,11 +47,14 @@ const {
         <div class="flex justify-between items-center">
 
           <!-- Logo -->
-          <a
-            href="/"
-            class="font-serif text-xl tracking-wide text-im-text hover:text-im-dark transition-colors"
-          >
-            Iris Musshoff
+          <a href="/" aria-label="Iris Musshoff – Startseite">
+            <Image
+              src={logo}
+              alt="Iris Musshoff"
+              class="h-10 w-auto"
+              widths={[160, 320]}
+              sizes="160px"
+            />
           </a>
 
           <!-- Desktop navigation -->
