@@ -9,13 +9,15 @@ import portraitSessel from '../assets/imfs-about.jpg';
 
       <!-- Portrait -->
       <div class="order-2 md:order-1">
-        <Image
-          src={portraitSessel}
-          alt="Iris Musshoff im Sessel"
-          class="w-full aspect-[3/4] object-cover"
-          widths={[600, 900]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+        <div class="aspect-[3/4] overflow-hidden">
+          <Image
+            src={portraitSessel}
+            alt="Iris Musshoff im Sessel"
+            class="w-full h-full object-cover object-center"
+            widths={[600, 900]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
         <p class="mt-5 text-center font-sans text-xs tracking-[0.25em] uppercase text-im-taupe">
           Iris Musshoff
         </p>

@@ -10,8 +10,7 @@ interface Service {
   description: string;
   features: string[];
   priceLabel: string;
-  price?: string;
-  pricing?: PricingItem[];
+  pricing: PricingItem[];
 }
 
 const services: Service[] = [
@@ -26,7 +25,7 @@ const services: Service[] = [
       'Konkrete Empfehlungen',
     ],
     priceLabel: 'Investition',
-    price: 'ab 255 €',
+    pricing: [{ label: '', price: 'ab 255 €' }],
   },
   {
     eyebrow: 'Ganzheitlich',
@@ -38,7 +37,7 @@ const services: Service[] = [
       'Ortsklärung',
       'Optimierung des Energieflusses',
     ],
-    priceLabel: 'Preise',
+    priceLabel: 'Investition',
     pricing: [
       { label: 'Wohnung bis 100 m²', price: 'ab 444 €' },
       { label: 'Business / Praxis / Büro', price: 'ab 555 €' },
@@ -58,7 +57,7 @@ const services: Service[] = [
       'Begleitung über mehrere Monate',
     ],
     priceLabel: 'Investition',
-    price: 'ab 222 € / Monat',
+    pricing: [{ label: '', price: 'ab 222 € / Monat' }],
   },
 ];
 ---
@@ -102,20 +101,21 @@ const services: Service[] = [
             </ul>
 
             <div class="border-t border-im-beige pt-6 mt-auto">
-              <span class="section-label mb-2">{service.priceLabel}</span>
-              {service.price && (
-                <p class="font-serif text-2xl text-im-text mt-2">{service.price}</p>
-              )}
-              {service.pricing && (
-                <div class="space-y-1 mt-2">
-                  {service.pricing.map(item => (
-                    <p class="font-sans text-sm text-im-dark">
-                      {item.label}
-                      <span class="text-im-text font-medium ml-1">{item.price}</span>
-                    </p>
-                  ))}
-                </div>
-              )}
+              <span class="section-label mb-3 block">{service.priceLabel}</span>
+              <div class="space-y-2">
+                {service.pricing.map(item =>
+                  item.label ? (
+                    <div class="flex justify-between items-baseline gap-4">
+                      <span class="font-sans text-sm text-im-dark">{item.label}</span>
+                      <span class="font-sans text-sm font-medium text-im-text whitespace-nowrap">
+                        {item.price}
+                      </span>
+                    </div>
+                  ) : (
+                    <p class="font-serif text-2xl text-im-text">{item.price}</p>
+                  )
+                )}
+              </div>
             </div>
           </div>
         ))
