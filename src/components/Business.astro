@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import businessImg from '../assets/imfs-business.png';
+
 const targetGroups = [
-  'Praxen',
-  'Kanzleien',
-  'Büros',
-  'Selbständige',
-  'Coaches & Berater',
-  'kleine Unternehmen',
+  'Praxen & Gesundheitsberufe',
+  'Kanzleien & Beratungsunternehmen',
+  'Salons & Studios',
+  'Selbstständige',
+  'Kleine und große Unternehmen',
 ];
 ---
 
@@ -20,37 +22,23 @@ const targetGroups = [
         <h2
           class="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-im-text leading-tight mb-8"
         >
-          Für Unternehmen<br />&amp; Arbeitsräume.
+          Erfolg beginnt in deinen Räumen.
         </h2>
         <div class="space-y-5 font-sans text-im-dark leading-relaxed">
           <p class="font-serif text-xl text-im-text leading-relaxed">
+            Nutze die Kraft deiner Räume.
+          </p>
+          <p>
             Die meisten Menschen verbringen einen großen Teil ihres Tages an ihrem
-            Arbeitsplatz. Deshalb sollten Arbeitsräume nicht nur funktional sein –
-            sie sollen unterstützen, Klarheit fördern und gute Energie tragen.
+            Arbeitsplatz. Arbeitsräume sollen deshalb nicht nur funktional sein.
+            Sie dürfen Menschen stärken, Klarheit fördern und eine Atmosphäre
+            schaffen, in der konzentriertes Arbeiten leicht wird.
           </p>
+          <p>Oft sind es kleine Veränderungen, die eine große Wirkung entfalten.</p>
           <p>
-            Mit meiner Arbeit unterstütze ich dich dabei, die Energie in deinen
-            Arbeitsräumen gezielt zu optimieren – ob in Praxis, Kanzlei, Büro
-            oder im eigenen Unternehmen.
-          </p>
-          <p>
-            Oft sind es kleine Veränderungen, die eine große Wirkung entfalten:
-            Mitarbeitende fühlen sich wohler, Kundinnen und Kunden bleiben länger,
-            Abläufe werden leichter und Räume wirken klarer und einladender.
-          </p>
-        </div>
-
-        <!-- Zahlen -->
-        <div class="mt-10 pt-8 border-t border-im-taupe/30 space-y-4 font-sans text-im-dark leading-relaxed">
-          <p class="font-serif text-lg text-im-text">
-            Meine zweite Leidenschaft sind Zahlen.
-          </p>
-          <p>
-            Denn Erfolg darf nicht nur spürbar sein – er darf auch sichtbar
-            und messbar werden. Veränderungen zeigen sich häufig auch
-            in höherer Mitarbeiterzufriedenheit, geringerer Fluktuation, mehr
-            Konzentration, besserer Zusammenarbeit, größerer Sichtbarkeit und mehr
-            Kundenanfragen.
+            Mehr Konzentration.<br />
+            Mehr Klarheit.<br />
+            Mehr Leichtigkeit.
           </p>
         </div>
 
@@ -58,13 +46,17 @@ const targetGroups = [
         <p class="mt-10 font-serif text-xl md:text-2xl text-im-text italic leading-relaxed">
           Erfolg beginnt nicht bei den Zahlen.<br />
           Erfolg beginnt in den Räumen,<br />
-          in denen Menschen arbeiten.
+          in denen Menschen arbeiten.<br />
+          Erfolg ist nicht nur spürbar.<br />
+          Erfolg ist messbar.
         </p>
       </div>
 
-      <!-- Für wen – rechte Spalte, bewusst tiefer positioniert -->
-      <div class="md:pt-24">
-        <h3 class="font-serif text-xl text-im-text mb-2">Für wen?</h3>
+      <!-- Rechte Spalte -->
+      <div class="md:pt-16">
+
+        <!-- Besonders geeignet für -->
+        <h3 class="font-serif text-xl text-im-text mb-2">Besonders geeignet für</h3>
         <span class="block w-8 h-px bg-im-taupe mb-7"></span>
         <ul class="space-y-4">
           {
@@ -76,11 +68,34 @@ const targetGroups = [
             ))
           }
         </ul>
-        <p class="mt-8 font-sans text-xs text-im-dark/60 leading-relaxed max-w-xs">
-          Für Arbeitsräume, die dich und dein Team unterstützen und gute Energie tragen.
-        </p>
-      </div>
 
+        <!-- Warum ich die Arbeit mit Unternehmen liebe -->
+        <div class="mt-10 pt-8 border-t border-im-taupe/30">
+          <h3 class="font-serif text-xl text-im-text mb-2">
+            Warum ich die Arbeit mit Unternehmen liebe
+          </h3>
+          <span class="block w-8 h-px bg-im-taupe mb-6"></span>
+          <p class="font-sans text-sm text-im-dark leading-relaxed">
+            Seit über 30 Jahren unterstütze ich als Unternehmerin viele Betriebe im
+            kaufmännischen Bereich. Gerade deshalb begeistert es mich, wenn
+            Veränderungen in Arbeitsräumen nicht nur das Miteinander verbessern,
+            sondern sich auch im Unternehmen zeigen. Für mich ist das jedes Mal
+            aufs Neue faszinierend.
+          </p>
+        </div>
+
+        <!-- Business-Bild -->
+        <div class="mt-10">
+          <Image
+            src={businessImg}
+            alt="Iris Musshoff"
+            width={500}
+            height={400}
+            class="w-full h-auto"
+          />
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
