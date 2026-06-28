@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/imfs-logo.png';
 ---
 
 <section id="kontakt" class="py-24 bg-white">
@@ -12,7 +14,7 @@
         <h2
           class="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-im-text leading-tight mb-8"
         >
-          Ich freue mich darauf,<br />von dir zu hören.
+          Ich freue mich,<br />von Dir zu hören.
         </h2>
         <p class="font-sans text-im-dark leading-relaxed mb-10">
           Hast du Fragen oder möchtest du ein unverbindliches
@@ -37,6 +39,9 @@
               +49 177 8359346
             </a>
           </div>
+        </div>
+        <div class="mt-10 opacity-40">
+          <Image src={logoImg} alt="Iris Musshoff" width={52} height={52} class="h-10 w-auto" />
         </div>
       </div>
 
