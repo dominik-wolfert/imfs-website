@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import portraitStehend from '../assets/imfs-hero.png';
+import logoImg from '../assets/imfs-logo.png';
 ---
 
 <section class="placeholder-hero-bg min-h-[85vh] flex items-center">
@@ -9,19 +10,35 @@ import portraitStehend from '../assets/imfs-hero.png';
 
       <!-- Text -->
       <div>
+        <!-- Logo: dezent über der Überschrift (nur Desktop, da Header-Logo auf Mobile sichtbar) -->
+        <div class="hidden md:block mb-6 opacity-50">
+          <Image src={logoImg} alt="Iris Musshoff" width={52} height={52} class="h-10 w-auto" />
+        </div>
         <span class="section-label">Feng Shui · Energiearbeit · Raumbegleitung</span>
         <span class="accent-line"></span>
         <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-im-text leading-[1.1] tracking-wide">
-          Räume, die<br />Menschen<br />tragen.
+          Nutze die Kraft<br />deiner Räume.
         </h1>
-        <p class="mt-8 font-sans text-lg text-im-dark leading-relaxed max-w-md">
-          Räume und Orte können uns stärken, unterstützen und neue Kraft schenken.
-          Manchmal spüren wir, dass etwas nicht stimmig ist – ohne genau benennen
-          zu können, warum.
-        </p>
-        <p class="mt-4 font-sans text-im-dark leading-relaxed max-w-md">
-          Ich begleite dich dabei, die Energie in deinen Wohn- und Arbeitsräumen
-          wieder ins Gleichgewicht zu bringen.
+        <div class="mt-8 space-y-4 font-sans text-im-dark leading-relaxed max-w-md">
+          <p>Räume können uns stärken, unterstützen und neue Kraft schenken.</p>
+          <p>
+            Manchmal gerät dieses Gleichgewicht aus dem Blick.<br />
+            Manchmal fehlt die Leichtigkeit.<br />
+            Manchmal wirken Räume schwer.<br />
+            Und manchmal spüren wir, dass etwas nicht mehr stimmig ist –<br />
+            ohne genau benennen zu können, warum.
+          </p>
+          <p>Ich begleite dich dabei, die Potenziale deiner Wohn- oder Arbeitsräume zu entdecken.</p>
+          <p>
+            Ich höre zu.<br />
+            Ich nehme wahr.<br />
+            Wir betrachten gemeinsam deine Räume.
+          </p>
+        </div>
+        <p class="mt-6 font-serif text-lg text-im-text italic leading-relaxed">
+          Für mehr Klarheit.<br />
+          Für mehr Leichtigkeit.<br />
+          Für mehr Wohlbefinden.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row gap-4">
           <a href="#kontakt" class="btn-primary">Kontakt aufnehmen</a>
@@ -29,14 +46,14 @@ import portraitStehend from '../assets/imfs-hero.png';
         </div>
       </div>
 
-      <!-- Portrait -->
+      <!-- Portrait (~15 % größer als zuvor) -->
       <div class="flex justify-center md:justify-end mt-10 md:mt-0">
-        <div class="w-56 sm:w-64 md:w-72 lg:w-80 overflow-hidden aspect-3/4">
+        <div class="w-64 sm:w-72 md:w-80 lg:w-96 overflow-hidden aspect-3/4">
           <Image
             src={portraitStehend}
             alt="Iris Musshoff"
-            width={320}
-            height={427}
+            width={384}
+            height={512}
             class="w-full h-auto object-top"
           />
         </div>
