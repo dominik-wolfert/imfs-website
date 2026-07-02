@@ -44,19 +44,24 @@ import logoImg from '../assets/imfs-logo.png';
 
       <!-- Portrait mit Logo darüber -->
       <div class="flex justify-center md:justify-end mt-10 md:mt-0">
-        <div class="flex flex-col items-center md:items-end gap-8 w-full">
-          <div class="hidden md:block opacity-65">
-            <Image src={logoImg} alt="Iris Musshoff" width={160} height={160} class="h-32 w-auto" />
+        <div class="flex flex-col items-center gap-10 w-72 md:w-80 lg:w-96">
+
+          <!-- Logo: primäres Brand-Element, volle Spaltenbreite -->
+          <div class="hidden md:block w-full opacity-80">
+            <Image src={logoImg} alt="Iris Musshoff" width={384} height={384} class="w-full h-auto" />
           </div>
-        <div class="w-64 sm:w-72 md:w-80 lg:w-96 overflow-hidden aspect-3/4">
-          <Image
-            src={portraitStehend}
-            alt="Iris Musshoff"
-            width={384}
-            height={512}
-            class="w-full h-auto object-top"
-          />
-        </div>
+
+          <!-- Portrait: etwas schmaler, sodass das Logo optisch führt -->
+          <div class="w-64 md:w-[80%] overflow-hidden aspect-3/4">
+            <Image
+              src={portraitStehend}
+              alt="Iris Musshoff"
+              width={384}
+              height={512}
+              class="w-full h-auto object-top"
+            />
+          </div>
+
         </div>
       </div>
 
