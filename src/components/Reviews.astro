@@ -3,12 +3,12 @@ const testimonials = [
   {
     quote:
       'Iris hat mit ganz viel Ruhe und Feingefühl bei mir gearbeitet. Seitdem gehe ich bewusster und mit mehr Dankbarkeit in meine Räume, und ich merke besonders abends, dass meine Gedanken beim Einschlafen ruhiger geworden sind. Danke dafür. Ich bin gespannt, wie sich alles weiter entwickelt.',
-    name: 'Bianca F., Paderborn',
+    name: 'Bianca Finke',
   },
   {
     quote:
-      'Seit Iris in meinen Räumen gearbeitet hat, hat sich die Energie spürbar verändert. Es ist deutlich mehr Leichtigkeit eingekehrt, und es herrscht ein sehr schönes, harmonisches Miteinander. Die Atmosphäre fühlt sich klarer, wärmer und einfach stimmiger an. Besonders bemerkenswert ist, dass selbst meine Kunden – ganz unabhängig von mir – diese positive Veränderung wahrnehmen und die besondere, angenehme Frequenz ansprechen. Ich bin sehr dankbar für diese wertvolle Arbeit und kann Iris von Herzen weiterempfehlen.',
-    name: 'Anette K., Warendorf',
+      'Seit Iris in meinen Räumen gearbeitet hat, hat sich die Energie spürbar verändert. Es ist deutlich mehr Leichtigkeit eingekehrt, und es herrscht ein sehr schönes, harmonisches Miteinander. Die Atmosphäre fühlt sich klärer, wärmer und einfach stimmiger an. Besonders bemerkenswert ist, dass selbst meine Kunden – ganz unabhängig von mir – diese positive Veränderung wahrnehmen und die besondere, angenehme Frequenz ansprechen. Ich bin sehr dankbar für diese wertvolle Arbeit und kann Iris von Herzen weiterempfehlen.',
+    name: 'Anette Kreienbaum',
   },
 ];
 ---
@@ -26,20 +26,95 @@ const testimonials = [
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      {
-        testimonials.map(t => (
-          <div class="bg-white border-t-2 border-im-taupe p-8 flex flex-col">
-            <blockquote class="font-serif text-lg text-im-text leading-relaxed flex-1">
-              „{t.quote}"
-            </blockquote>
-            <p class="mt-8 font-sans text-xs tracking-widest uppercase text-im-taupe">
-              {t.name}
-            </p>
-          </div>
-        ))
-      }
+    <div class="relative">
+      <!-- Track -->
+      <div class="overflow-hidden">
+        <div
+          id="testimonial-track"
+          class="flex transition-transform duration-500 ease-in-out"
+        >
+          {
+            testimonials.map(t => (
+              <div class="min-w-full px-1">
+                <div class="bg-white border-t-2 border-im-taupe p-8 md:p-12 flex flex-col max-w-3xl mx-auto">
+                  <blockquote class="font-serif text-lg md:text-xl text-im-text leading-relaxed flex-1">
+                    „{t.quote}"
+                  </blockquote>
+                  <p class="mt-8 font-sans text-xs tracking-widest uppercase text-im-taupe">
+                    {t.name}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex justify-center items-center gap-8 mt-10">
+        <button
+          id="testimonial-prev"
+          aria-label="Vorheriges Testimonial"
+          class="w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4" aria-hidden="true">
+            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 010 1.06L8.06 10l3.72 3.72a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+
+        <div class="flex gap-3" role="tablist" aria-label="Testimonials">
+          {
+            testimonials.map((_, i) => (
+              <button
+                class="testimonial-dot w-2 h-2 rounded-full transition-colors duration-300"
+                data-index={i}
+                aria-label={`Testimonial ${i + 1}`}
+                role="tab"
+              />
+            ))
+          }
+        </div>
+
+        <button
+          id="testimonial-next"
+          aria-label="Nächstes Testimonial"
+          class="w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4" aria-hidden="true">
+            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 010-1.06z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
   </div>
 </section>
+
+<script>
+  const track = document.getElementById('testimonial-track') as HTMLElement;
+  const dots = Array.from(document.querySelectorAll<HTMLButtonElement>('.testimonial-dot'));
+  const total = dots.length;
+  let current = 0;
+
+  function goTo(index: number) {
+    current = ((index % total) + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((dot, i) => {
+      if (i === current) {
+        dot.classList.add('bg-im-taupe');
+        dot.classList.remove('bg-im-taupe/30');
+        dot.setAttribute('aria-selected', 'true');
+      } else {
+        dot.classList.remove('bg-im-taupe');
+        dot.classList.add('bg-im-taupe/30');
+        dot.setAttribute('aria-selected', 'false');
+      }
+    });
+  }
+
+  goTo(0);
+
+  document.getElementById('testimonial-prev')?.addEventListener('click', () => goTo(current - 1));
+  document.getElementById('testimonial-next')?.addEventListener('click', () => goTo(current + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+</script>

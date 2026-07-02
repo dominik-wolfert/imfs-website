@@ -10,6 +10,31 @@ import Footer from '../components/Footer.astro';
   <section class="py-24 bg-im-creme min-h-screen">
     <div class="max-w-3xl mx-auto px-6">
 
+      <!-- Kompass-Illustration -->
+      <div class="flex justify-center mb-16">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" class="w-20 h-20 opacity-70" aria-hidden="true">
+          <!-- Outer ring -->
+          <circle cx="40" cy="40" r="36" stroke="#B7A08A" stroke-width="0.75"/>
+          <!-- Inner ring -->
+          <circle cx="40" cy="40" r="28" stroke="#B7A08A" stroke-width="0.4" stroke-dasharray="2 3"/>
+          <!-- North needle (filled) -->
+          <path d="M40 8 L36.5 40 L40 36 L43.5 40 Z" fill="#B7A08A"/>
+          <!-- South needle (outline) -->
+          <path d="M40 72 L43.5 40 L40 44 L36.5 40 Z" fill="#EFE8E1" stroke="#B7A08A" stroke-width="0.6"/>
+          <!-- East needle -->
+          <path d="M72 40 L40 36.5 L44 40 L40 43.5 Z" fill="#B7A08A" opacity="0.45"/>
+          <!-- West needle -->
+          <path d="M8 40 L40 43.5 L36 40 L40 36.5 Z" fill="#B7A08A" opacity="0.45"/>
+          <!-- Center dot -->
+          <circle cx="40" cy="40" r="2.5" fill="#B7A08A"/>
+          <!-- Cardinal labels -->
+          <text x="40" y="5.5" text-anchor="middle" font-size="5" fill="#B7A08A" font-family="Inter, sans-serif" letter-spacing="0.5">N</text>
+          <text x="40" y="78" text-anchor="middle" font-size="5" fill="#B7A08A" font-family="Inter, sans-serif" letter-spacing="0.5" opacity="0.6">S</text>
+          <text x="75.5" y="41.5" text-anchor="middle" font-size="5" fill="#B7A08A" font-family="Inter, sans-serif" letter-spacing="0.5" opacity="0.6">O</text>
+          <text x="4.5" y="41.5" text-anchor="middle" font-size="5" fill="#B7A08A" font-family="Inter, sans-serif" letter-spacing="0.5" opacity="0.6">W</text>
+        </svg>
+      </div>
+
       <span class="section-label">Über mich</span>
       <span class="accent-line"></span>
       <h1

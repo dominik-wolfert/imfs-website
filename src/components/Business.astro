@@ -41,21 +41,19 @@ const targetGroups = [
             Mehr Leichtigkeit.
           </p>
         </div>
-
-        <!-- Abschluss-Zitat -->
-        <p class="mt-10 font-serif text-xl md:text-2xl text-im-text italic leading-relaxed">
-          Erfolg beginnt nicht bei den Zahlen.<br />
-          Erfolg beginnt in den Räumen,<br />
-          in denen Menschen arbeiten.<br />
-          Erfolg ist nicht nur spürbar.<br />
-          Erfolg ist messbar.
-        </p>
       </div>
 
       <!-- Rechte Spalte -->
-      <div class="md:pt-16">
+      <div>
 
-        <!-- Besonders geeignet für -->
+        <!--
+          Alternative Formulierungen für "Besonders geeignet für":
+          - "Ideal für ..."
+          - "Passend für ..."
+          - "Sinnvoll für ..."
+          - "Meine Arbeit unterstützt ..."
+          Aktuell: "Besonders geeignet für"
+        -->
         <h3 class="font-serif text-xl text-im-text mb-2">Besonders geeignet für</h3>
         <span class="block w-8 h-px bg-im-taupe mb-7"></span>
         <ul class="space-y-4">
@@ -84,18 +82,30 @@ const targetGroups = [
           </p>
         </div>
 
-        <!-- Business-Bild -->
-        <div class="mt-10">
-          <Image
-            src={businessImg}
-            alt="Iris Musshoff"
-            width={500}
-            height={400}
-            class="w-full h-auto"
-          />
-        </div>
-
       </div>
     </div>
+
+    <!-- Business-Bild + Abschluss-Zitat (volle Breite, bessere Balance) -->
+    <div class="mt-16 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <Image
+          src={businessImg}
+          alt="Iris Musshoff"
+          width={500}
+          height={400}
+          class="w-full h-auto"
+        />
+      </div>
+      <div>
+        <p class="font-serif text-xl md:text-2xl text-im-text italic leading-relaxed">
+          Erfolg beginnt nicht bei den Zahlen.<br />
+          Erfolg beginnt in den Räumen,<br />
+          in denen Menschen arbeiten.<br />
+          Erfolg ist nicht nur spürbar.<br />
+          Erfolg ist messbar.
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
