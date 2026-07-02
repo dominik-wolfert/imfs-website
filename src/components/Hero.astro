@@ -10,10 +10,6 @@ import logoImg from '../assets/imfs-logo.png';
 
       <!-- Text -->
       <div>
-        <!-- Logo: dezent über der Überschrift (nur Desktop, da Header-Logo auf Mobile sichtbar) -->
-        <div class="hidden md:block mb-6 opacity-65">
-          <Image src={logoImg} alt="Iris Musshoff" width={80} height={80} class="h-16 w-auto" />
-        </div>
         <span class="section-label">Feng Shui · Energiearbeit · Raumbegleitung</span>
         <span class="accent-line"></span>
         <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-im-text leading-[1.1] tracking-wide">
@@ -46,8 +42,12 @@ import logoImg from '../assets/imfs-logo.png';
         </div>
       </div>
 
-      <!-- Portrait (~15 % größer als zuvor) -->
+      <!-- Portrait mit Logo darüber -->
       <div class="flex justify-center md:justify-end mt-10 md:mt-0">
+        <div class="flex flex-col items-center md:items-end gap-8 w-full">
+          <div class="hidden md:block opacity-65">
+            <Image src={logoImg} alt="Iris Musshoff" width={160} height={160} class="h-32 w-auto" />
+          </div>
         <div class="w-64 sm:w-72 md:w-80 lg:w-96 overflow-hidden aspect-3/4">
           <Image
             src={portraitStehend}
@@ -56,6 +56,7 @@ import logoImg from '../assets/imfs-logo.png';
             height={512}
             class="w-full h-auto object-top"
           />
+        </div>
         </div>
       </div>
 
