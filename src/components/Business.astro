@@ -15,7 +15,7 @@ const targetGroups = [
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-16 items-start">
 
-      <!-- Text links -->
+      <!-- Linke Spalte: alle Textinhalte in Lesereihenfolge -->
       <div>
         <span class="section-label">Für Unternehmen</span>
         <span class="accent-line"></span>
@@ -41,18 +41,42 @@ const targetGroups = [
             Mehr Leichtigkeit.
           </p>
         </div>
+
+        <!-- Warum ich die Arbeit mit Unternehmen liebe -->
+        <div class="mt-12 pt-10 border-t border-im-taupe/30">
+          <h3 class="font-serif text-xl text-im-text mb-2">
+            Warum ich die Arbeit mit Unternehmen liebe
+          </h3>
+          <span class="block w-8 h-px bg-im-taupe mb-6"></span>
+          <p class="font-sans text-sm text-im-dark leading-relaxed">
+            Seit über 30 Jahren unterstütze ich als Unternehmerin viele Betriebe im
+            kaufmännischen Bereich. Gerade deshalb begeistert es mich, wenn
+            Veränderungen in Arbeitsräumen nicht nur das Miteinander verbessern,
+            sondern sich auch im Unternehmen zeigen. Für mich ist das jedes Mal
+            aufs Neue faszinierend.
+          </p>
+        </div>
+
+        <!-- Abschluss-Zitat -->
+        <p class="mt-10 font-serif text-xl md:text-2xl text-im-text italic leading-relaxed">
+          Erfolg beginnt nicht bei den Zahlen.<br />
+          Erfolg beginnt in den Räumen,<br />
+          in denen Menschen arbeiten.<br />
+          Erfolg ist nicht nur spürbar.<br />
+          Erfolg ist messbar.
+        </p>
       </div>
 
-      <!-- Rechte Spalte -->
-      <div>
+      <!-- Rechte Spalte: Liste + Bild, leicht versetzt nach unten -->
+      <div class="md:pt-16">
 
         <!--
-          Alternative Formulierungen für "Besonders geeignet für":
+          Alternative Formulierungen für "Ich begleite unter anderem":
           - "Ideal für ..."
           - "Passend für ..."
           - "Sinnvoll für ..."
           - "Meine Arbeit unterstützt ..."
-          Aktuell: "Besonders geeignet für"
+          Aktuell: "Ich begleite unter anderem"
         -->
         <h3 class="font-serif text-xl text-im-text mb-2">Ich begleite unter anderem</h3>
         <span class="block w-8 h-px bg-im-taupe mb-7"></span>
@@ -67,45 +91,18 @@ const targetGroups = [
           }
         </ul>
 
-        <!-- Warum ich die Arbeit mit Unternehmen liebe -->
-        <div class="mt-10 pt-8 border-t border-im-taupe/30">
-          <h3 class="font-serif text-xl text-im-text mb-2">
-            Warum ich die Arbeit mit Unternehmen liebe
-          </h3>
-          <span class="block w-8 h-px bg-im-taupe mb-6"></span>
-          <p class="font-sans text-sm text-im-dark leading-relaxed">
-            Seit über 30 Jahren unterstütze ich als Unternehmerin viele Betriebe im
-            kaufmännischen Bereich. Gerade deshalb begeistert es mich, wenn
-            Veränderungen in Arbeitsräumen nicht nur das Miteinander verbessern,
-            sondern sich auch im Unternehmen zeigen. Für mich ist das jedes Mal
-            aufs Neue faszinierend.
-          </p>
+        <!-- Portrait direkt unter der Liste -->
+        <div class="mt-10">
+          <Image
+            src={businessImg}
+            alt="Iris Musshoff"
+            width={500}
+            height={400}
+            class="w-full h-auto"
+          />
         </div>
 
       </div>
     </div>
-
-    <!-- Business-Bild + Abschluss-Zitat (volle Breite, bessere Balance) -->
-    <div class="mt-16 grid md:grid-cols-2 gap-16 items-center">
-      <div>
-        <Image
-          src={businessImg}
-          alt="Iris Musshoff"
-          width={500}
-          height={400}
-          class="w-full h-auto"
-        />
-      </div>
-      <div>
-        <p class="font-serif text-xl md:text-2xl text-im-text italic leading-relaxed">
-          Erfolg beginnt nicht bei den Zahlen.<br />
-          Erfolg beginnt in den Räumen,<br />
-          in denen Menschen arbeiten.<br />
-          Erfolg ist nicht nur spürbar.<br />
-          Erfolg ist messbar.
-        </p>
-      </div>
-    </div>
-
   </div>
 </section>
