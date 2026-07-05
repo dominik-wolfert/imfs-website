@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 import '../styles/custom.css';
-import { Image } from 'astro:assets';
-import logo from '../assets/imfs-logo.png';
+import bildmarkeUrl from '../assets/brand/Iris_Bildmarke.svg?url';
+import wortmarkeUrl from '../assets/brand/Iris_Wortmarke.svg?url';
 
 interface Props {
   title?: string;
@@ -47,14 +47,9 @@ const {
         <div class="flex justify-between items-center">
 
           <!-- Logo -->
-          <a href="/" aria-label="Iris Musshoff – Startseite">
-            <Image
-              src={logo}
-              alt="Iris Musshoff"
-              width={80}
-              height={80}
-              class="h-10 w-auto"
-            />
+          <a href="/" aria-label="Iris Musshoff – Startseite" class="flex items-center gap-3">
+            <img src={bildmarkeUrl} alt="" class="h-10 w-auto" aria-hidden="true" />
+            <img src={wortmarkeUrl} alt="Iris Musshoff" class="h-7 w-auto hidden sm:block" />
           </a>
 
           <!-- Desktop navigation -->

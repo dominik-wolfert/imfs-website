@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import logoImg from '../assets/imfs-logo.png';
+import bildmarkeUrl from '../assets/brand/Iris_Bildmarke.svg?url';
 ---
 
 <section id="kontakt" class="py-24 bg-white">
@@ -17,7 +16,8 @@ import logoImg from '../assets/imfs-logo.png';
           Ich freue mich,<br />von Dir zu hören.
         </h2>
         <p class="font-sans text-im-dark leading-relaxed mb-10">
-          Unverbindliches und kostenloses Erstgespräch – online oder bei mir zu Hause.
+          Unverbindliches und kostenloses Erstgespräch –
+          telefonisch oder gerne per Zoom-Meeting.
           Schreib mir einfach, ich melde mich bei dir.
         </p>
         <div class="space-y-4">
@@ -35,7 +35,7 @@ import logoImg from '../assets/imfs-logo.png';
           </div>
         </div>
         <div class="mt-10 opacity-40">
-          <Image src={logoImg} alt="Iris Musshoff" width={52} height={52} class="h-10 w-auto" />
+          <img src={bildmarkeUrl} alt="" aria-hidden="true" class="h-10 w-auto" />
         </div>
       </div>
 

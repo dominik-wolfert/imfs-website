@@ -1,14 +1,24 @@
 ---
 const testimonials = [
   {
-    quote:
+    paragraphs: [
       'Iris hat mit ganz viel Ruhe und Feingefühl bei mir gearbeitet. Seitdem gehe ich bewusster und mit mehr Dankbarkeit in meine Räume, und ich merke besonders abends, dass meine Gedanken beim Einschlafen ruhiger geworden sind. Danke dafür. Ich bin gespannt, wie sich alles weiter entwickelt.',
+    ],
     name: 'Bianca Finke',
   },
   {
-    quote:
+    paragraphs: [
       'Seit Iris in meinen Räumen gearbeitet hat, hat sich die Energie spürbar verändert. Es ist deutlich mehr Leichtigkeit eingekehrt, und es herrscht ein sehr schönes, harmonisches Miteinander. Die Atmosphäre fühlt sich klärer, wärmer und einfach stimmiger an. Besonders bemerkenswert ist, dass selbst meine Kunden – ganz unabhängig von mir – diese positive Veränderung wahrnehmen und die besondere, angenehme Frequenz ansprechen. Ich bin sehr dankbar für diese wertvolle Arbeit und kann Iris von Herzen weiterempfehlen.',
+    ],
     name: 'Anette Kreienbaum',
+  },
+  {
+    paragraphs: [
+      'Iris hat meinen Wohn- und Businessraum aus der Ferne geklärt – und die Veränderung war tatsächlich sofort spürbar.',
+      'Nach ihrer Klärung fühlte es sich an, als hätten sich Blockaden im Raum gelöst. Die neue Energie brachte mehr Klarheit, einen freieren Blick und wieder richtig Lust, meine Räume neu zu gestalten – passend zu meiner neuen Lebensphase.',
+      'Ich kann Iris von Herzen empfehlen – besonders dann, wenn du spürst, dass deine Räume wieder mehr Klarheit, Leichtigkeit und neue Energie für dich und dein Business bekommen dürfen.',
+    ],
+    name: 'Renate B.',
   },
 ];
 ---
@@ -37,8 +47,10 @@ const testimonials = [
             testimonials.map(t => (
               <div class="min-w-full px-1">
                 <div class="bg-white border-t-2 border-im-taupe p-8 md:p-12 flex flex-col max-w-3xl mx-auto">
-                  <blockquote class="font-serif text-lg md:text-xl text-im-text leading-relaxed flex-1">
-                    „{t.quote}"
+                  <blockquote class="font-serif text-lg md:text-xl text-im-text leading-relaxed flex-1 space-y-4">
+                    {t.paragraphs.map((p, pi) => (
+                      <p>{pi === 0 ? `„${p}` : p}{pi === t.paragraphs.length - 1 ? '"' : ''}</p>
+                    ))}
                   </blockquote>
                   <p class="mt-8 font-sans text-xs tracking-widest uppercase text-im-taupe">
                     {t.name}

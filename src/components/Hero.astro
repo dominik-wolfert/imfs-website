@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import portraitStehend from '../assets/imfs-hero.png';
-import logoImg from '../assets/imfs-logo.png';
+import logoUrl from '../assets/brand/Iris_Logo.svg?url';
 ---
 
 <section class="placeholder-hero-bg min-h-[85vh] flex items-center">
@@ -16,19 +16,19 @@ import logoImg from '../assets/imfs-logo.png';
           Nutze die Kraft<br />deiner Räume.
         </h1>
         <div class="mt-8 space-y-4 font-sans text-im-dark leading-relaxed max-w-md">
-          <p>Räume können uns stärken, unterstützen und neue Kraft schenken.</p>
+          <p>Räume können dich stärken, dich tragen und dir neue Kraft schenken.</p>
           <p>
-            Manchmal gerät dieses Gleichgewicht aus dem Blick.<br />
+            Manchmal gerät diese Balance aus dem Gleichgewicht.<br />
             Manchmal fehlt die Leichtigkeit.<br />
             Manchmal wirken Räume schwer.<br />
-            Und manchmal spüren wir, dass etwas nicht mehr stimmig ist –<br />
+            Und manchmal spürst du, dass etwas nicht mehr stimmig ist –<br />
             ohne genau benennen zu können, warum.
           </p>
           <p>Ich begleite dich dabei, die Potenziale deiner Wohn- oder Arbeitsräume zu entdecken.</p>
           <p>
             Ich höre zu.<br />
             Ich nehme wahr.<br />
-            Wir betrachten gemeinsam deine Räume.
+            Gemeinsam betrachten wir deine Räume.
           </p>
         </div>
         <p class="mt-6 font-serif text-lg text-im-text italic leading-relaxed">
@@ -48,7 +48,7 @@ import logoImg from '../assets/imfs-logo.png';
 
           <!-- Logo: primäres Brand-Element, volle Spaltenbreite -->
           <div class="hidden md:block w-full opacity-80">
-            <Image src={logoImg} alt="Iris Musshoff" width={384} height={384} class="w-full h-auto" />
+            <img src={logoUrl} alt="Iris Musshoff" class="w-full h-auto" />
           </div>
 
           <!-- Portrait: etwas schmaler, sodass das Logo optisch führt -->

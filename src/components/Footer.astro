@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/imfs-logo.png';
+import logoUrl from '../assets/brand/Iris_Logo.svg?url';
 const year = new Date().getFullYear();
 ---
 
@@ -11,12 +10,10 @@ const year = new Date().getFullYear();
 
       <!-- Brand -->
       <div>
-        <Image
-          src={logo}
+        <img
+          src={logoUrl}
           alt="Iris Musshoff"
-          width={120}
-          height={120}
-          class="h-16 w-auto"
+          class="h-16 w-auto brightness-0 invert opacity-70"
         />
       </div>
 
@@ -41,7 +38,7 @@ const year = new Date().getFullYear();
           </li>
           <li>
             <a
-              href="#kontakt"
+              href="/#kontakt"
               class="font-sans text-xs text-im-beige tracking-widest uppercase hover:text-im-creme transition-colors"
             >
               Kontakt
