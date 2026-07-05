@@ -83,10 +83,10 @@ const services: Service[] = [
     </div>
 
     <!-- Cards -->
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-x-8 gap-y-8 services-grid">
       {
         services.map(service => (
-          <div class="bg-white border-t-2 border-im-taupe p-8">
+          <div class="bg-white border-t-2 border-im-taupe p-8 service-card">
             <span class="section-label mb-4">{service.eyebrow}</span>
             <h3 class="font-serif text-2xl font-medium text-im-text mb-3">{service.name}</h3>
             <p class="font-sans text-im-dark leading-relaxed mb-6">{service.description}</p>

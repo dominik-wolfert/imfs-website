@@ -145,3 +145,19 @@ a:focus-visible {
 .placeholder-portrait-bg {
   background: linear-gradient(145deg, #EFE8E1 0%, #D9D0C8 100%);
 }
+
+/* === Services: Subgrid-Ausrichtung === */
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-rows: repeat(5, auto);
+    row-gap: 0;
+  }
+
+  .service-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 5;
+    align-items: start;
+  }
+}
