@@ -37,12 +37,25 @@ const testimonials = [
     </div>
 
     <div class="relative">
-      <!-- Track -->
-      <div class="overflow-hidden">
-        <div
-          id="testimonial-track"
-          class="flex transition-transform duration-500 ease-in-out"
+      <!-- Track with side buttons -->
+      <div class="flex items-center gap-4">
+
+        <button
+          id="testimonial-prev"
+          aria-label="Vorheriges Testimonial"
+          class="shrink-0 w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
         >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4" aria-hidden="true">
+            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 010 1.06L8.06 10l3.72 3.72a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+
+        <!-- Track -->
+        <div class="overflow-hidden flex-1">
+          <div
+            id="testimonial-track"
+            class="flex transition-transform duration-500 ease-in-out"
+          >
           {
             testimonials.map(t => (
               <div class="min-w-full px-1">
@@ -59,43 +72,33 @@ const testimonials = [
               </div>
             ))
           }
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <div class="flex justify-center items-center gap-8 mt-10">
-        <button
-          id="testimonial-prev"
-          aria-label="Vorheriges Testimonial"
-          class="w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4" aria-hidden="true">
-            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 010 1.06L8.06 10l3.72 3.72a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z" clip-rule="evenodd"/>
-          </svg>
-        </button>
-
-        <div class="flex gap-3" role="tablist" aria-label="Testimonials">
-          {
-            testimonials.map((_, i) => (
-              <button
-                class="testimonial-dot w-2 h-2 rounded-full transition-colors duration-300"
-                data-index={i}
-                aria-label={`Testimonial ${i + 1}`}
-                role="tab"
-              />
-            ))
-          }
+          </div>
         </div>
 
         <button
           id="testimonial-next"
           aria-label="Nächstes Testimonial"
-          class="w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
+          class="shrink-0 w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4" aria-hidden="true">
             <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 010-1.06z" clip-rule="evenodd"/>
           </svg>
         </button>
+
+      </div>
+
+      <!-- Dots -->
+      <div class="flex justify-center gap-3 mt-8" role="tablist" aria-label="Testimonials">
+        {
+          testimonials.map((_, i) => (
+            <button
+              class="testimonial-dot w-2 h-2 rounded-full transition-colors duration-300"
+              data-index={i}
+              aria-label={`Testimonial ${i + 1}`}
+              role="tab"
+            />
+          ))
+        }
       </div>
     </div>
 
