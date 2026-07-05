@@ -35,6 +35,14 @@ const {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="theme-color" content="#B7A08A" />
+    <style>
+      .site-logo-bildmarke { height: 5rem; width: auto; }
+      .site-logo-wortmarke { height: 3rem; width: auto; }
+      @media (min-width: 640px) {
+        .site-logo-bildmarke { height: 8rem; }
+        .site-logo-wortmarke { height: 5rem; }
+      }
+    </style>
   </head>
 
   <body class="bg-im-creme text-im-text font-sans antialiased">
@@ -43,13 +51,13 @@ const {
       id="site-header"
       class="fixed top-0 left-0 right-0 z-50 bg-im-creme/95 backdrop-blur-sm border-b border-im-beige transition-shadow duration-300"
     >
-      <div class="max-w-5xl mx-auto px-6 py-5">
+      <div class="max-w-5xl mx-auto px-6 py-2">
         <div class="flex justify-between items-center">
 
           <!-- Logo -->
           <a href="/" aria-label="Iris Musshoff – Startseite" class="flex items-center gap-3">
-            <img src={bildmarkeUrl} alt="" style="height: 8rem; width: auto;" aria-hidden="true" />
-            <img src={wortmarkeUrl} alt="Iris Musshoff" style="height: 5rem; width: auto;" class="hidden sm:block" />
+            <img src={bildmarkeUrl} alt="" class="site-logo-bildmarke" aria-hidden="true" />
+            <img src={wortmarkeUrl} alt="Iris Musshoff" class="site-logo-wortmarke hidden sm:block" />
           </a>
 
           <!-- Desktop navigation -->
@@ -101,8 +109,8 @@ const {
       </div>
     </header>
 
-    <!-- Spacer for fixed header -->
-    <div aria-hidden="true" class="h-18"></div>
+    <!-- Spacer for fixed header: height set dynamically via JS -->
+    <div id="header-spacer" aria-hidden="true"></div>
 
     <main>
       <slot />
@@ -139,4 +147,14 @@ const {
     },
     { passive: true },
   );
+
+  // Sync spacer height to actual header height
+  const headerSpacer = document.getElementById('header-spacer');
+  function syncHeaderSpacer() {
+    if (header && headerSpacer) {
+      headerSpacer.style.height = header.offsetHeight + 'px';
+    }
+  }
+  syncHeaderSpacer();
+  window.addEventListener('resize', syncHeaderSpacer, { passive: true });
 </script>
