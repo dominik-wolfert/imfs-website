@@ -52,6 +52,12 @@ const {
         .site-logo-bildmarke { height: 8rem; }
         .site-logo-wortmarke { height: 5rem; }
       }
+      /* Pre-set spacer height to prevent layout shift before the deferred JS sets the exact value.
+         Values mirror the logo heights + py-2 (2 × 0.5 rem = 1 rem) of the inner container. */
+      #header-spacer { height: 6rem; }   /* < 640 px: 5 rem logo + 1 rem padding */
+      @media (min-width: 640px)  { #header-spacer { height: 9rem; } } /* 8 rem logo */
+      @media (min-width: 768px)  { #header-spacer { height: 6rem; } } /* 5 rem logo (md scale-down) */
+      @media (min-width: 1024px) { #header-spacer { height: 9rem; } } /* 8 rem logo */
     </style>
   </head>
 
@@ -59,7 +65,7 @@ const {
 
     <header
       id="site-header"
-      class="fixed top-0 left-0 right-0 z-50 bg-im-creme/95 backdrop-blur-sm border-b border-im-beige transition-shadow duration-300"
+      class="fixed top-0 left-0 right-0 z-50 bg-im-creme border-b border-im-beige transition-shadow duration-300"
     >
       <div class="max-w-5xl mx-auto px-6 py-2">
         <div class="flex justify-between items-center">
