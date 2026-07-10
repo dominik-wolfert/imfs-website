@@ -42,6 +42,16 @@ const {
         .site-logo-bildmarke { height: 8rem; }
         .site-logo-wortmarke { height: 5rem; }
       }
+      /* At md (768px) the desktop nav appears – scale down the logo to avoid collision */
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .site-logo-bildmarke { height: 5rem; }
+        .site-logo-wortmarke { height: 3rem; }
+      }
+      /* At lg (1024px) there is enough room for the full logo again */
+      @media (min-width: 1024px) {
+        .site-logo-bildmarke { height: 8rem; }
+        .site-logo-wortmarke { height: 5rem; }
+      }
     </style>
   </head>
 
@@ -55,13 +65,13 @@ const {
         <div class="flex justify-between items-center">
 
           <!-- Logo -->
-          <a href="/" aria-label="Iris Musshoff – Startseite" class="flex items-center gap-3">
+          <a href="/" aria-label="Iris Musshoff – Startseite" class="flex items-center gap-2 lg:gap-3 shrink-0">
             <img src={bildmarkeUrl} alt="" class="site-logo-bildmarke" aria-hidden="true" />
             <img src={wortmarkeUrl} alt="Iris Musshoff" class="site-logo-wortmarke hidden sm:block" />
           </a>
 
           <!-- Desktop navigation -->
-          <nav class="hidden md:flex items-center gap-10" aria-label="Hauptnavigation">
+          <nav class="hidden md:flex items-center gap-8 lg:gap-10 shrink-0" aria-label="Hauptnavigation">
             <a href="/#ueber-mich" class="nav-link">Über mich</a>
             <a href="/#leistungen" class="nav-link">Leistungen</a>
             <a href="/#business" class="nav-link">Business</a>
