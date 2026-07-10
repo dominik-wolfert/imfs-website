@@ -125,8 +125,15 @@ const {
       </div>
     </header>
 
-    <!-- Spacer for fixed header: height set dynamically via JS -->
+    <!-- Spacer for fixed header: height set synchronously before first paint -->
     <div id="header-spacer" aria-hidden="true"></div>
+    <script is:inline>
+      (function () {
+        var h = document.getElementById('site-header');
+        var s = document.getElementById('header-spacer');
+        if (h && s) s.style.height = h.offsetHeight + 'px';
+      })();
+    </script>
 
     <main>
       <slot />
