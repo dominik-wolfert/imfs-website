@@ -23,7 +23,7 @@ const testimonials = [
 ];
 ---
 
-<section id="stimmen" class="py-24 bg-im-beige">
+<section id="stimmen" class="pt-24 pb-16 bg-im-beige">
   <div class="max-w-5xl mx-auto px-6">
 
     <div class="mb-16">
@@ -38,12 +38,13 @@ const testimonials = [
 
     <div class="relative">
       <!-- Track with side buttons -->
-      <div class="flex items-center gap-4">
+      <!-- Mobile: track full-width, buttons wrap below. sm+: classic side-by-side -->
+      <div class="flex flex-wrap justify-center gap-6 sm:flex-nowrap sm:items-center sm:gap-4">
 
         <button
           id="testimonial-prev"
           aria-label="Vorheriges Testimonial"
-          class="shrink-0 w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
+          class="order-2 sm:order-1 shrink-0 w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4" aria-hidden="true">
             <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 010 1.06L8.06 10l3.72 3.72a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z" clip-rule="evenodd"/>
@@ -51,15 +52,15 @@ const testimonials = [
         </button>
 
         <!-- Track -->
-        <div class="overflow-hidden flex-1">
+        <div class="overflow-hidden w-full order-1 sm:order-2 sm:flex-1">
           <div
             id="testimonial-track"
-            class="flex transition-transform duration-500 ease-in-out"
+            class="flex items-start sm:items-stretch transition-transform duration-500 ease-in-out"
           >
           {
             testimonials.map(t => (
-              <div class="min-w-full px-1">
-                <div class="bg-white border-t-2 border-im-taupe p-8 md:p-12 flex flex-col max-w-3xl mx-auto">
+              <div class="min-w-full px-1 sm:h-full">
+                <div class="bg-white border-t-2 border-im-taupe p-6 sm:p-8 md:p-12 flex flex-col max-w-3xl mx-auto sm:h-full">
                   <blockquote class="font-serif text-lg md:text-xl text-im-text leading-relaxed flex-1 space-y-4">
                     {t.paragraphs.map((p, pi) => (
                       <p>{pi === 0 ? `„${p}` : p}{pi === t.paragraphs.length - 1 ? '"' : ''}</p>
@@ -78,7 +79,7 @@ const testimonials = [
         <button
           id="testimonial-next"
           aria-label="Nächstes Testimonial"
-          class="shrink-0 w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
+          class="order-3 shrink-0 w-10 h-10 flex items-center justify-center text-im-taupe hover:text-im-dark transition-colors border border-im-taupe/40 hover:border-im-taupe rounded-full"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4" aria-hidden="true">
             <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 010-1.06z" clip-rule="evenodd"/>
@@ -107,13 +108,27 @@ const testimonials = [
 
 <script>
   const track = document.getElementById('testimonial-track') as HTMLElement;
+  const trackContainer = track.parentElement as HTMLElement;
   const dots = Array.from(document.querySelectorAll<HTMLButtonElement>('.testimonial-dot'));
   const total = dots.length;
   let current = 0;
 
+  // On mobile (< sm breakpoint) sync the container height to the visible card's natural height.
+  // On sm+ the CSS sm:h-full handles height; we reset any inline style.
+  function syncHeight() {
+    if (window.innerWidth >= 640) {
+      trackContainer.style.height = '';
+      return;
+    }
+    const cards = Array.from(track.children) as HTMLElement[];
+    const card = cards[current];
+    if (card) trackContainer.style.height = card.offsetHeight + 'px';
+  }
+
   function goTo(index: number) {
     current = ((index % total) + total) % total;
     track.style.transform = `translateX(-${current * 100}%)`;
+    syncHeight();
     dots.forEach((dot, i) => {
       if (i === current) {
         dot.classList.add('bg-im-taupe');
@@ -132,4 +147,7 @@ const testimonials = [
   document.getElementById('testimonial-prev')?.addEventListener('click', () => goTo(current - 1));
   document.getElementById('testimonial-next')?.addEventListener('click', () => goTo(current + 1));
   dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+  // Re-sync on resize (e.g. orientation change)
+  window.addEventListener('resize', syncHeight, { passive: true });
 </script>
